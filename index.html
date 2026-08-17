@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // 首帧前应用已保存的语言与主题，避免刷新时闪烁；与 src/settings.tsx 的逻辑保持一致
+      try {
+        var t = localStorage.getItem('bsk.theme');
+        if (t !== 'light' && t !== 'dark') t = 'auto';
+        var dark =
+          t === 'dark' ||
+          (t === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+        document.documentElement.lang =
+          localStorage.getItem('bsk.lang') === 'en' ? 'en' : 'zh-CN';
+      } catch (e) {}
+    </script>
+    <title>书源工具箱 · bsk-webui</title>
+    <meta
+      name="description"
+      content="阅读（Legado）书源在线批量编辑：统一分组、规范名称、自定义字段与交互式去重，纯浏览器处理，可部署到 Cloudflare Workers"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📚</text></svg>"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

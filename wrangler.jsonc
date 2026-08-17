@@ -1,0 +1,11 @@
+// Cloudflare Workers 静态资源部署配置（纯前端应用，无需 Worker 脚本）
+// 部署：pnpm build && pnpm deploy（即 wrangler deploy，读取 dist/）
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "bsk-webui",
+  "compatibility_date": "2025-06-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}

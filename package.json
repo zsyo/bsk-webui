@@ -1,0 +1,36 @@
+{
+  "name": "bsk-webui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "阅读书源编辑工具的网页版：批量清理分组、规范化名称、自定义字段与交互式去重，纯浏览器处理，可部署到 Cloudflare Pages / Workers",
+  "author": "Zephyr <zephyr@aico.top>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "preview": "vite preview",
+    "deploy": "wrangler deploy",
+    "deploy:pages": "wrangler pages deploy dist"
+  },
+  "dependencies": {
+    "emoji-regex": "^10.4.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.2.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vitest": "^4.1.10",
+    "wrangler": "^4.123.0"
+  }
+}

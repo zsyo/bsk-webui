@@ -1,0 +1,6 @@
+# 单包项目的 pnpm 设置文件（pnpm 10+ 从这里读取配置）
+# esbuild / workerd 需要安装脚本校验平台二进制；sharp 本项目用不到
+allowBuilds:
+  esbuild: true
+  sharp: false
+  workerd: true
