@@ -600,10 +600,13 @@ a:hover {
 }
 
 /* ============================ 去重组卡片 ============================ */
+/* 屏外组跳过布局/绘制（隐含 contain: layout paint），上百组时滚动与悬停不再全页重绘 */
 .dup-group {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 220px;
 }
 .dup-group + .dup-group {
   margin-top: 12px;

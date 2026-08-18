@@ -119,6 +119,8 @@ const zh = {
   'dup.exploreNone': '（无）',
   'dup.barSummary': '保留 {kept} 条 · 移除 {removed} 条 · 共 {groups} 组',
   'dup.apply': '应用去重',
+  'dup.confirmNext': '确认本页并处理下一页',
+  'dup.pagerStatus': '第 {page}/{pages} 页 · 剩余 {n} 组待处理',
 
   // 组件
   'tag.remove': '移除 {tag}',
@@ -230,6 +232,8 @@ const en: Record<MessageKey, string> = {
   'dup.exploreNone': '(none)',
   'dup.barSummary': 'Keep {kept} · Remove {removed} · {groups} groups',
   'dup.apply': 'Apply dedup',
+  'dup.confirmNext': 'Confirm this page & continue',
+  'dup.pagerStatus': 'Page {page}/{pages} · {n} groups left',
 
   'tag.remove': 'Remove {tag}',
 };

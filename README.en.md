@@ -11,7 +11,7 @@ A web-based batch editor for Legado ("阅读") book sources: unify groups, norma
 | 🗂️ Unify Groups | `clear groups` | Set every `bookSourceGroup` to `Author@YYMMDD` (default author `Zephyr`) |
 | ✏️ Normalize Names | `clear name` | Strip leading/trailing symbols (e.g. 《》【】), remove emoji and `#number`, trim whitespace; auto-number duplicates as `#1/#2` and sort by name; the before/after diff list is numbered and zebra-striped — turn on "show unchanged" to review every name, and **click any new name after the arrow to edit it inline** before applying |
 | 🧩 Custom Field | `clear custom` | Set any field to a unified value — text / number / boolean / JSON |
-| 🔍 Deduplicate | `dup` | Group by the host of `bookSourceUrl`; unique hosts are kept automatically; for duplicate groups, check the entries to keep, rename them, and inspect their explore rules |
+| 🔍 Deduplicate | `dup` | Group by the host of `bookSourceUrl`; unique hosts are kept automatically; for duplicate groups, check the entries to keep, rename them, and inspect their explore rules. With many groups the list paginates (50 per page) via "Confirm this page & continue" — one undo point per page |
 
 Web-only enhancements:
 
