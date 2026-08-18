@@ -21,9 +21,19 @@ interface Decision {
   rename: string;
 }
 
-/** 每组默认策略：预勾选第一条，其余不保留。 */
+/**
+ * 每组默认策略：优先勾选第一个「有发现页」的条目，否则回退到第一条；其余不保留。
+ * 保留带发现页的源可尽量不丢失发现页能力。
+ */
 function defaultDecisionsFor(g: DupGroup): Decision[] {
-  return g.items.map((_, i) => ({ keep: i === 0, rename: '' }));
+  let preferred = 0;
+  for (let i = 0; i < g.items.length; i++) {
+    if (hasExploreUrl(g.items[i]!)) {
+      preferred = i;
+      break;
+    }
+  }
+  return g.items.map((_, i) => ({ keep: i === preferred, rename: '' }));
 }
 
 /** 单条目行：exploreUrl 展开时才渲染 <pre>，收起时 DOM 中没有巨型文本。 */
