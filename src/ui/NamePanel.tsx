@@ -27,8 +27,13 @@ export function NamePanel({
   // 符号或数据变化后，规范化结果重排、index 语义已变，清空手动覆盖避免错位。
   useEffect(() => {
     setOverrides({});
-    setApplied(null);
   }, [symbols, data]);
+
+  // 切换符号后旧的成功提示不再反映当前预览，清掉以免误导；
+  // 注意不依赖 data——应用规范化本身会改写 data，若这里也清，成功提示一闪即逝。
+  useEffect(() => {
+    setApplied(null);
+  }, [symbols]);
 
   // 应用覆盖后的最终「after」名称。
   const finalAfter = (c: { index: number; after: string }) =>
