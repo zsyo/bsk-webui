@@ -12,7 +12,7 @@
   "scripts": {
     "dev": "vite",
     "build": "rimraf dist && vite build",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist node_modules",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "preview": "vite preview",
